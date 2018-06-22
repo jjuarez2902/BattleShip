@@ -1,2 +1,2 @@
-# BattleShip
-A backup repository for my BattleShip game, backend built using JavaScript :)
+# Scrabble
+A backup repository for my Scrabble game, backend built using JavaScript :)
