@@ -4,8 +4,8 @@
 let row = ""; // host current row of Scrabble table
 let cell = "" // host current cell in current row of Scrabble table
 
-let colorInCell = function(cell, cell_id, triple_word_idxs){
-    cell.style.color = 'red';
+let colorInCell = function(cell, color){
+    cell.style.backgroundColor = color;
 };
 
 let createTable = function(){ // let's initialize the Scrabble Board!
@@ -16,13 +16,13 @@ let createTable = function(){ // let's initialize the Scrabble Board!
             cell = document.createElement('td');
             cell.textContent = (i + 1) * (j + 1);
             cell.id = `${i},${j}`;
-            colorInCell(cell, cell.id, triple_word_idxs);
+            colorInCell(cell, 'blue');
             //console.log(cell.id);
             row.appendChild(cell);
             document.getElementById('scrabble-table').appendChild(row);
-        }
-    }
-};
+        } // end inner for
+    } // end outer for
+}; // end createTable()
 
 window.onload = function(){
     createTable();
