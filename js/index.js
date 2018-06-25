@@ -1,4 +1,4 @@
-// Jorge Juarez - Project 0
+// Jorge Juarez - Project 0 : Scrabble Game
 // .js file used in conjunction with ../views/index.html
 
 let row = ""; // host current row of Scrabble table
@@ -25,6 +25,11 @@ let initSpecialCell = function(cell){
     searchSpecialCellIdx(cell, triple_word_idxs, 'orange', 'TRI_W');
 } // end initSpecialCell function
 
+let initFreeSpace = function(cell){
+    cell.style.backgroundColor = "green";
+    cell.textContent = "FREE";    
+};
+
 let createTable = function(){ // let's initialize the Scrabble Board!
     console.log("hi");
     for(let i = 0; i < 15; i++){
@@ -35,6 +40,8 @@ let createTable = function(){ // let's initialize the Scrabble Board!
             cell.id = `${i},${j}`;
             colorInCell(cell, 'grey');
             initSpecialCell(cell);
+            if(i === 7 && j ===7)
+                initFreeSpace(cell);
             row.appendChild(cell);
             document.getElementById('scrabble-table').appendChild(row);
         } // end inner for

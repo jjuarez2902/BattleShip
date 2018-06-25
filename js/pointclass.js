@@ -1,4 +1,4 @@
-// Jorge Juarez - Project 0
+// Jorge Juarez - Project 0 : Scrabble Game
 // .js file used in conjunction with ../views/index.html
 // File specifies all variables and functions concerned with Point class
 
