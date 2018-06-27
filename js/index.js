@@ -1,9 +1,6 @@
 // Jorge Juarez - Project 0 : Scrabble Game
 // .js file used in conjunction with ../views/index.html
 
-let row = ""; // host current row of Scrabble table
-let cell = "" // host current cell in current row of Scrabble table
-
 let colorInCell = function(cell, color){
     cell.style.backgroundColor = color;
 };
@@ -17,12 +14,13 @@ let searchSpecialCellIdx = function(cell, special_cell_arr, color, text){
         } // end if
     } // end for
 };
+
 let initSpecialCell = function(cell){
     // ugh idk how else to do this without brute force...
-    searchSpecialCellIdx(cell, double_letter_idxs, 'lightblue', 'DOU_L');
-    searchSpecialCellIdx(cell, triple_letter_idxs, 'cornflowerblue', 'TRI_L');
-    searchSpecialCellIdx(cell, double_word_idxs, 'pink', 'DOU_W');
-    searchSpecialCellIdx(cell, triple_word_idxs, 'orange', 'TRI_W');
+    searchSpecialCellIdx(cell, double_letter_idxs, 'lightblue', 'DL');
+    searchSpecialCellIdx(cell, triple_letter_idxs, 'cornflowerblue', 'TL');
+    searchSpecialCellIdx(cell, double_word_idxs, 'pink', 'DW');
+    searchSpecialCellIdx(cell, triple_word_idxs, 'orange', 'TW');
 } // end initSpecialCell function
 
 let initFreeSpace = function(cell){
@@ -31,7 +29,8 @@ let initFreeSpace = function(cell){
 };
 
 let createTable = function(){ // let's initialize the Scrabble Board!
-    console.log("hi");
+    let row = ""; // host current row of Scrabble table
+    let cell = "" // host current cell in current row of Scrabble table
     for(let i = 0; i < 15; i++){
         row = document.createElement('tr');
         for(let j = 0; j < 15; j++){
@@ -48,7 +47,11 @@ let createTable = function(){ // let's initialize the Scrabble Board!
     } // end outer for
 }; // end createTable function
 
+let c = initPt(3, 4);
+let s = new SpecialCell(c);
+
 window.onload = function(){
     createTable();
     console.log(triple_word_idxs[5].getX());
+    console.log(s.getParentCell().getX());
 };
