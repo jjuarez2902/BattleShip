@@ -2,6 +2,10 @@
 // .js file used in conjunction with ../views/index.html
 // File specifies all variables and functions concerned with Point class
 
+/* Anatomy of the Point class:
+    xSymbol: x coordinate, type number
+    ySymbol: y coordinate, type number
+*/
 let Point = ( // class to instantiate Point object
     function () {
         let xSymbol = Symbol('x');

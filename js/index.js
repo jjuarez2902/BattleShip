@@ -54,4 +54,5 @@ window.onload = function(){
     createTable();
     console.log(triple_word_idxs[5].getX());
     console.log(s.getParentCell().getX());
+    console.log(initTile("A").getLetter());
 };
