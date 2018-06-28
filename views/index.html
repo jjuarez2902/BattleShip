@@ -8,15 +8,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Scrabble Game</title>
 
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
     integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">     
-    <link rel="stylesheet" type="style/css" href="../css/index.css">
+    <style>
+        body{
+            font-family: 'Lato', sans-serif;
+        }
+        .player-headers{
+            font-size: 16pt;
+            text-align: center;
+        }
+        #announce-span{
+            text-align:center;
+        }
+    </style> 
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <nav class="navbar navbar-expand bg-dark">
-            <a href="" class="navbar-brand text-light"> Revature </a>
+            <a href="" class="navbar-brand text-light"> Scrabble </a>
             <!-- In order to make more buttons on navbar, we need an ul tag with .navbar-nav class -->
             <ul class="navbar-nav">
                 <!-- To actually create the button, we need li.nav-item and an a-tag nested a.nav-link inside -->
@@ -27,26 +40,39 @@
         </nav>
     </div>
     <br>
-    <div class="container">
-        <p> This is some text. </p>
-    </div>
-    <div class="container col-md-6" id = "table-div">
-        <table class="table table-sm" id = "scrabble-table">
-            <thead class="thead" id = "scrabble-table-head">
-            </thead>
-            <tbody>
+    <div class="container-fluid jumbotron col-md-10">
+        <div class="container">
+            <span id = "announce-span"> This is some text. </span>
+        </div>
+        <div class="container col-md-8" id = "table-div">
+            <table class="table table-sm" id = "scrabble-table">
+                <thead class="thead" id = "scrabble-table-head">
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-4  offset-1 bg-primary player-headers"> 
+                Player 1 
 
-            </tbody>
-        </table>
-    </div>
+            </div>
+            <div class="col-md-4 offset-2 bg-success player-headers"> 
+                Player 2 
 
+            </div>
+        </div>
+        <br>
+        <div class="container btn-group">  
+            <button class="btn btn-primary"> Button </button>
+        </div>
+    </div>
     <script src="../js/Point.js"> </script>
     <script src="../js/Tile.js"></script>
     <script src="../js/Player.js"></script>
     <script src="../js/Cell.js"></script>
     <script src="../js/SpecialCells.js."></script>
-    
-    
     <script src = "../js/index.js"></script>
 </body>
 </html>

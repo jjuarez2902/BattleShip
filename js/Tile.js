@@ -20,4 +20,18 @@ let Tile = (
 
 let initTile = function(letter, letterValue){
     return new Tile(letter, letterValue);
-}
+};
+
+let fisherYatesShuffle = function(tile_arr){
+    let j = 0;
+    let temp = initTile();
+    for(k = 0; k < 2; k++){
+        for(let i = 0; i < tile_arr.length - 2; i++){
+            j = Math.floor(Math.random() * tile_arr.length);
+            temp = tile_arr[i];
+            tile_arr[i] = tile_arr[j];
+            tile_arr[j] = temp;
+        } // end inner loop
+    } // end outer loop
+    return tile_arr;
+};

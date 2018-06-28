@@ -11,6 +11,7 @@ let searchSpecialCellIdx = function(cell, special_cell_arr, color, text){
         if (cell.id == special_cell_arr[i].getX() + ',' + special_cell_arr[i].getY()) {
             cell.style.backgroundColor = color;
             cell.textContent = text;
+            cell.fontWeight = "800";
             return true;
         } // end if
     } // end for
@@ -27,6 +28,7 @@ let initSpecialCell = function(cell){
 
 let initFreeSpace = function(cell){
     cell.style.backgroundColor = "green";
+    cell.style.fontWeight = "800";
     cell.textContent = "FREE";    
 };
 
@@ -35,7 +37,7 @@ let initFreeSpace = function(cell){
     Scrabble table for configuration and manipulation.
     UGH I LOWKEY WANNA MAKE A 1D ARRAY AND THEN JUST DO THE THING YEAH BUT IDK MANG
 */
-isSpecialCell = function(cell){ 
+let isSpecialCell = function(cell){ 
     if(searchSpecialCellIdx(cell, double_letter_idxs, 'lightblue', 'DL') || 
         searchSpecialCellIdx(cell, triple_letter_idxs, 'cornflowerblue', 'TL') ||
         searchSpecialCellIdx(cell, double_word_idxs, 'pink', 'DW') ||
@@ -44,8 +46,6 @@ isSpecialCell = function(cell){
         return true;
     return false;
 }
-
-
 
 let createTable = function(){ // let's initialize the Scrabble Board!
     let row = ""; // host current row of Scrabble table
@@ -56,6 +56,7 @@ let createTable = function(){ // let's initialize the Scrabble Board!
             cell = document.createElement('td'); // create a new html cell tag 
             cell.textContent = (i + 1) * (j + 1); // TODO: get rid of this debuggin line
             cell.id = `${i},${j}`; // set the id of the td cell as the format 'x-y'
+            cell.style.color = "white";
            //colorInCell(cell, 'grey'); // color in the cell as the default format
             initSpecialCell(cell);
             if(i === 7 && j ===7)
@@ -71,6 +72,8 @@ let createTable = function(){ // let's initialize the Scrabble Board!
         cell = document.createElement('td');
         cell.textContent = str.substring(i, i+1);
         cell.id = `${str.substring(i,i+1)}`;
+        cell.style.fontWweight = '900';
+        cell.style.color = 'white';
         document.getElementById('scrabble-table-head').appendChild(cell);
     }
 
@@ -85,5 +88,7 @@ window.onload = function(){
     console.log(s.getParentCell().getX());
     console.log(initTile("A").getLetter());
     document.getElementById('table-div').style.backgroundImage = "url('../img/wood.jpg')";
-    console.log(tile_arr.length);
+    
+    fisherYatesShuffle(tile_arr);
+    console.log(tile_arr);
 };
