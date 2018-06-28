@@ -25,3 +25,46 @@ const triple_word_idxs = [initPt(0, 0), initPt(0, 7), initPt(0, 14),
 ];
 
 const free_space_idx = initPt(7,7);
+
+/*
+2 blank tiles(scoring 0 points)
+1 point: E× 12, A× 9, I× 9, O× 8, N× 6, R× 6, T× 6, L× 4, S× 4, U× 4 DONE
+2 points: D× 4, G× 3 DONE
+3 points: B× 2, C× 2, M× 2, P× 2 DONE
+4 points: F× 2, H× 2, V× 2, W× 2, Y× 2 
+5 points: K× 1
+8 points: J× 1, X× 1
+10 points: Q× 1, Z× 1
+*/
+let tile_arr = [ initTile(' ', 0), initTile(' ', 0),
+    initTile('A', 1), initTile('A', 1), initTile('A', 1), initTile('A', 1), initTile('A', 1),
+    initTile('A', 1), initTile('A', 1), initTile('A', 1), initTile('A', 1),    
+    initTile('E', 1), initTile('E', 1), initTile('E', 1), initTile('E', 1), initTile('E', 1), initTile('E', 1), 
+    initTile('E', 1), initTile('E', 1),  initTile('E', 1), initTile('E', 1), initTile('E', 1), initTile('E', 1), 
+    initTile('I', 1), initTile('I', 1), initTile('I', 1), initTile('I', 1), initTile('I', 1), initTile('I', 1), 
+    initTile('I', 1), initTile('I', 1), initTile('I', 1), 
+    initTile('O', 1), initTile('O', 1), initTile('O', 1),  initTile('O', 1), initTile('O', 1), initTile('O', 1), 
+    initTile('O', 1), initTile('O', 1), 
+    initTile('L', 1), initTile('L', 1), initTile('L', 1), initTile('L', 1),
+    initTile('N', 1), initTile('N', 1), initTile('N', 1), initTile('N', 1), initTile('N', 1), initTile('N', 1),
+    initTile('R', 1), initTile('R', 1), initTile('R', 1), initTile('R', 1), initTile('R', 1), initTile('R', 1),
+    initTile('S', 1), initTile('S', 1), initTile('S', 1), initTile('S', 1),
+    initTile('T', 1), initTile('T', 1), initTile('T', 1), initTile('T', 1), initTile('T', 1), initTile('T', 1),
+    initTile('U', 1), initTile('U', 1), initTile('U', 1),  initTile('U', 1),
+    initTile('D', 2), initTile('D', 2), initTile('D', 2), initTile('D', 2),
+    initTile('G', 2), initTile('G', 2), initTile('G', 2),
+    initTile('B', 3), initTile('B', 3),
+    initTile('C',3), initTile('C', 3),
+    initTile('M', 3), initTile('M', 3), 
+    initTile('P', 3), initTile('P', 3),
+    initTile('F', 4), initTile('F', 4),
+    initTile('H', 4), initTile('H', 4),
+    initTile('V', 4), initTile('V', 4),
+    initTile('W', 4), initTile('W', 4),
+    initTile('Y', 4), initTile('Y', 4),
+    initTile('K', 5),
+    initTile('J', 8),
+    initTile('X', 8),
+    initTile('Q', 10),
+    initTile('Z', 10), 
+];
