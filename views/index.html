@@ -23,6 +23,16 @@
         #announce-span{
             text-align:center;
         }
+        #play-1{
+            float: left;
+        }
+        #play-2{
+            float:left;
+        }
+        .player-table{
+            font-size:24px;
+        }
+    
     </style> 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
@@ -53,19 +63,55 @@
             </table>
         </div>
         <hr>
-        <div class="row">
-            <div class="col-md-4  offset-1 bg-primary player-headers"> 
+        <div class="container row">
+            <div class="col-md-5 bg-primary player-headers"> 
                 Player 1 
 
             </div>
-            <div class="col-md-4 offset-2 bg-success player-headers"> 
+            <div class="col-md-5 offset-2 bg-success player-headers"> 
                 Player 2 
 
             </div>
         </div>
         <br>
-        <div class="container btn-group">  
+        <div class="container ">  
             <button class="btn btn-primary"> Button </button>
+            <button class="btn btn-primary offset-3"> Button </button>
+            <button class = "btn btn-primary offset-2"> Button </button>
+            <button class="btn btn-primary offset-2"> Button </button>
+        </div>
+        <br> <br> 
+        <div class="container">
+            <table class="smalltable table-bordered player-table offset-1" id = "play-1">
+                <thead class="thead">
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="smalltable table-bordered player-table offset-6" id = "play-2">
+                <thead class="thead">
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <script src="../js/Point.js"> </script>
