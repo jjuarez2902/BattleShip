@@ -32,6 +32,9 @@
         .player-table{
             font-size:24px;
         }
+        #scrabble-table{
+            text-align:center;
+        }
     
     </style> 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -49,20 +52,63 @@
             </ul>
         </nav>
     </div>
-    <br>
-    <div class="container-fluid jumbotron col-md-10">
+    <br> 
+    <div class="container-fluid jumbotron col-md-11">
         <div class="container">
             <span id = "announce-span"> This is some text. </span>
         </div>
-        <div class="container col-md-8" id = "table-div">
-            <table class="table table-sm" id = "scrabble-table">
-                <thead class="thead" id = "scrabble-table-head">
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div>
         <hr>
+        <div class="container " id = "table-div" >
+            <span id = "tspan">
+                <table class="smalltable table-bordered" id = "scrabble-table" style = "float:left">
+                    <thead class="thead thead-dark" id = "scrabble-table-head">
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </span>
+            <span>
+                <table class = "smalltable table-bordered offset-1" id = "menu-table" style = "float:left" >
+                    <thead></thead>
+                    <tbody>
+                        <tr>
+                            <td id ="td1"> 1</td>
+                            <td> 2</td>
+                            <td> 3</td>
+                            <td> 4 </td>
+                            <td> 5</td>
+                            <td> 6</td>
+                            <td> 7 </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class="btn"> Button </button>
+                            </td>
+                            <td>
+                                <button class="btn"> Button </button>
+                            </td>
+                            <td>
+                                <button class="btn"> Button </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 8 </td>
+                            <td> 9</td>
+                            <td> 10</td>
+                            <td> 11 </td>
+                            <td> 12 </td>
+                            <td> 13</td>
+                            <td> 14 </td>
+                        </tr>
+                    
+                    </tbody>
+                </table>
+            </span>
+        </div>
+        <br> <br> <br> <br> <br> <br> <br> <br>
+        <br> <br> <br> <br> <br> <br> <br> <br>
+    </div>
+<!--
         <div class="container row">
             <div class="col-md-5 bg-primary player-headers"> 
                 Player 1 
@@ -73,7 +119,7 @@
 
             </div>
         </div>
-        <br>
+        <br> <br> 
         <div class="container ">  
             <button class="btn btn-primary"> Button </button>
             <button class="btn btn-primary offset-3"> Button </button>
@@ -81,6 +127,7 @@
             <button class="btn btn-primary offset-2"> Button </button>
         </div>
         <br> <br> 
+        
         <div class="container">
             <table class="smalltable table-bordered player-table offset-1" id = "play-1">
                 <thead class="thead">
@@ -97,6 +144,7 @@
                     </tr>
                 </tbody>
             </table>
+
             <table class="smalltable table-bordered player-table offset-6" id = "play-2">
                 <thead class="thead">
                 </thead>
@@ -112,7 +160,9 @@
                     </tr>
                 </tbody>
             </table>
+
         </div>
+    -->
     </div>
     <script src="../js/Point.js"> </script>
     <script src="../js/Tile.js"></script>

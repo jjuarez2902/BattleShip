@@ -54,13 +54,15 @@ let createTable = function(){ // let's initialize the Scrabble Board!
         row = document.createElement('tr');
         for(let j = 0; j < 15; j++){
             cell = document.createElement('td'); // create a new html cell tag 
-            cell.textContent = (i + 1) * (j + 1); // TODO: get rid of this debuggin line
+            cell.textContent = `${i},${j}`; // TODO: get rid of this debuggin line
             cell.id = `${i},${j}`; // set the id of the td cell as the format 'x-y'
             cell.style.color = "white";
+            
            //colorInCell(cell, 'grey'); // color in the cell as the default format
             initSpecialCell(cell);
             if(i === 7 && j ===7)
                 initFreeSpace(cell);
+                
             row.appendChild(cell);
             document.getElementById('scrabble-table').appendChild(row);
         } // end inner for
@@ -82,13 +84,25 @@ let createTable = function(){ // let's initialize the Scrabble Board!
 let c = initPt(3, 4);
 let s = new SpecialCell(c);
 
+let pos = function(){
+    document.getElementById('td1').style.borderColor = "red";
+};
+
 window.onload = function(){
     createTable();
     console.log(triple_word_idxs[5].getX());
     console.log(s.getParentCell().getX());
     console.log(initTile("A").getLetter());
-    document.getElementById('table-div').style.backgroundImage = "url('../img/wood.jpg')";
-    
-    fisherYatesShuffle(tile_arr);
+    document.getElementById('scrabble-table').setAttribute('background', '../img/wood.jpg');
+    //style.background = "url('../img/wood.jpg')";
+    //let br = document.createElement('br');
+    //document.getElementById('addbr').appendChild(br);
+    //document.getElementById('addbr').appendChild(br);
+    //document.getElementById('addbr').appendChild(br);
+    //fisherYatesShuffle(tile_arr);
     console.log(tile_arr);
+
+    document.getElementById('td1').addEventListener('mouseover', pos);
 };
+
+
