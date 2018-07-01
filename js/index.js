@@ -14,7 +14,7 @@ let initFreeSpace = function(cell){
 
 let whatKindOfSpecialCell = function(cell, special_cell_arr){ // WELL, IS IT???
     for(let i = 0; i < special_cell_arr.length; i++){
-        ivf (cell.id == special_cell_arr[i].getX() + ',' + special_cell_arr[i].getY()){
+        if (cell.id == special_cell_arr[i].getX() + ',' + special_cell_arr[i].getY()){
             return true;
         }
     }
@@ -98,28 +98,30 @@ let createTable = function(){ // let's initialize the Scrabble Board!
 
 }; // end createTable function
 
-let c = initPt(3, 4);
-let s = new SpecialCell(c);
-
+/*
+//let c = initPt(3, 4);
+//let s = new SpecialCell(c);
+//console.log(triple_word_idxs[5].getX());
+//console.log(s.getParentCell().getX());
+//console.log(initTile("A").getLetter());
 let pos = function(){
     document.getElementById('td1').style.borderColor = "red";
 };
+*/
 
 window.onload = function(){
     createTable();
-    console.log(triple_word_idxs[5].getX());
-    console.log(s.getParentCell().getX());
-    console.log(initTile("A").getLetter());
     document.getElementById('scrabble-table').setAttribute('background', '../img/wood.jpg');
-    //style.background = "url('../img/wood.jpg')";
-    //let br = document.createElement('br');
-    //document.getElementById('addbr').appendChild(br);
-    //document.getElementById('addbr').appendChild(br);
-    //document.getElementById('addbr').appendChild(br);
-    //fisherYatesShuffle(tile_arr);
+    fisherYatesShuffle(tile_arr);
     console.log(tile_arr);
 
     console.log(scrabble_cell_arr);
+
+    initiateGame();
+
+    console.log(player_one.getTiles());
+    console.log(player_two.getTiles());
+    console.log(tile_arr);
     //document.getElementById('td1').addEventListener('mouseover', pos);
 };
 

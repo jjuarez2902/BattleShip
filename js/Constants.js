@@ -12,7 +12,12 @@ let init_2D_arr = function(outer,inner){
 }
 
 let scrabble_cell_arr = init_2D_arr(15,15);
+let s_cell_idx = 0;
 // this 2D array will house the scrabble board in a backend form, filled with Cell or SpecialCell objects
+
+let player_one = new Player(01, 0, new Array());
+let player_two = new Player(02, 0, new Array());
+
 
 const double_letter_idxs = [initPt(0,3), initPt(0,11),
     initPt(2,6), initPt(2,8), initPt(3,0), initPt(3,7), initPt(3,14),

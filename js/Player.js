@@ -11,10 +11,10 @@ let Player = (
         let idSymbol = Symbol['id'];
         let scoreSymbol = Symbol['score'];
         let tilesSymbol = Symbol['tiles'];
-        function Player(id = 1, score = 0, tiles = null){
+        function Player(id = 1, score = 0, tiles = null ){
             this[idSymbol] = id;
             this[scoreSymbol] = score;
-            this[tileSymbol] = tiles;
+            this[tilesSymbol] = tiles;
         }
         Player.prototype.getId = function() { return this[idSymbol]; }; // getters
         Player.prototype.getScore = function() { return this[scoreSymbol]; };
