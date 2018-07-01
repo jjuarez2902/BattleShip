@@ -10,12 +10,15 @@ let Player = (
     function(){
         let idSymbol = Symbol['id'];
         let scoreSymbol = Symbol['score'];
-        function Player(id = 1, score = 0){
+        let tilesSymbol = Symbol['tiles'];
+        function Player(id = 1, score = 0, tiles = null){
             this[idSymbol] = id;
             this[scoreSymbol] = score;
+            this[tileSymbol] = tiles;
         }
         Player.prototype.getId = function() { return this[idSymbol]; }; // getters
         Player.prototype.getScore = function() { return this[scoreSymbol]; };
+        Player.prototype.getTiles = function() { return this[tilesSymbol]; };
         Player.prototype.setId = function(id) { this[idSymbol] = id; }; // setters
         Player.prototype.setScore = function(score) { this[scoreSymbol]  = score; }
         return Player;

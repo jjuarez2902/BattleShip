@@ -3,6 +3,17 @@
 // .js file used to house cells in Scrabble table with special events attached to them
 // also include associated functions with them
 
+let init_2D_arr = function(outer,inner){
+    let res = [];
+    for(let i = 0; i < outer; i++){
+        res.push(new Array(inner));
+    };
+    return res;
+}
+
+let scrabble_cell_arr = init_2D_arr(15,15);
+// this 2D array will house the scrabble board in a backend form, filled with Cell or SpecialCell objects
+
 const double_letter_idxs = [initPt(0,3), initPt(0,11),
     initPt(2,6), initPt(2,8), initPt(3,0), initPt(3,7), initPt(3,14),
     initPt(6,2), initPt(6,6), initPt(6,8), initPt(6,12), initPt(7,3),
